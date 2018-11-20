@@ -1,16 +1,17 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "burger app for week 14",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/michaelfbagheri/Burger.git"
   },
-  "author": "MikeB",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/michaelfbagheri/Burger/issues"
