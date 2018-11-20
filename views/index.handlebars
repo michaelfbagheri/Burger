@@ -1,0 +1,30 @@
+<h1>BURGERS, BURGERS, YUM YUM YUM!</h1>
+
+
+<h2>available burgers</h2>
+<ul>
+  {{#each hsobjects}}
+    {{#unless devoured}}
+      {{>  devour=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>devoured burgers</h2>
+<ul>
+  {{#each burger}}
+    {{#unless devoured}}
+      {{<  devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+
+<form class="add-burger">
+<p>Enter name of burger to be added or devoured</p>
+<input type="text" name="input">
+<button type="submit" value="1">Add burger</button>
+<button type="submit" value="0">devour burger</button>
+</form>
+
