@@ -3,15 +3,16 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 app.use(express.static("public"));
 
-var bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({extended : true}));
-app.use(bodyParser.json);
+// var bodyParser = require("body-parser");
+// app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json);
 
 console.log('inside the server.js file')
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 
 
 var routes = require('./controllers/burgers_controller.js');
