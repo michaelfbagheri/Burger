@@ -3,21 +3,21 @@
 
 <h2>available burgers</h2>
 <ul>
-  {{#each hsobjects}}
+  {{#each data}}
     {{#unless devoured}}
       {{>  devour=true}}
     {{/unless}}
   {{/each}}
 </ul>
 
-<h2>devoured burgers</h2>
+{{!-- <h2>devoured burgers</h2>
 <ul>
   {{#each burger}}
     {{#unless devoured}}
       {{<  devoured=false}}
     {{/unless}}
   {{/each}}
-</ul>
+</ul> --}}
 
 
 
