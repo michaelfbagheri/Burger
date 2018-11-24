@@ -8,7 +8,7 @@ router.get('/', function(req,res){
         var hbsObject = {
             burger: data
         };
-        console.log(hbsObject);
+        console.log('returned from the model' + hbsObject);
         res.render('index',hbsObject)
     })
 });
