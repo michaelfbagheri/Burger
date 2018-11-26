@@ -3,7 +3,7 @@ var router = express.Router();
 var burger = require('../models/burger.js');
 
 router.get('/', function(req,res){
-    console.log('burgers_controllers page')
+    console.log('inside the burgers contoller page get function')
     burger.showAll((data) => {
         var hbsObject = {
             burger: data
@@ -12,6 +12,19 @@ router.get('/', function(req,res){
         res.render('index',hbsObject)
     })
 });
+
+router.post('/add/burger', function(req,res) {
+    console.log('router. post says: you chose to add ' + req.body.burger)
+    var burgerToBeAdded = req.body.burger;
+    burger.addNewBurger([burgerToBeAdded],(result) => {
+      console.log('after the adding of burger, weve returned with below object')
+      for (var i in result){
+          console.log(result[i]);
+      }
+    res.render('index');
+    });
+});
+
 
 
 

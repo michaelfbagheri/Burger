@@ -2,14 +2,23 @@ var orm = require('./../config/orm.js');
 
 var burger = {
 showAll: function (cb) {
-    console.log('inside burger.js page')
+    console.log('inside burger.js page');
     orm.selectAll().then((result) => {
-        var data = result;
-        console.log("promise successfully retunred")
-        console.log(data)
-        cb(result)
+        console.log("promise successfully retunred");
+        cb(result);
     }).catch((err) => {
         throw err;
+    });
+},
+addNewBurger: function (value,cb) {
+    console.log('inside burger.js page addNewBurger function');
+    orm.addBurger(value).then((result) => {
+        var data = result;
+        console.log('add new burger promise successfuly returned ' + data);
+        cb(result);
+    }).catch((err) => {
+        throw err;
+        // console.log(err)
     });
 }
 

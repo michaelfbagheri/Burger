@@ -1,9 +1,12 @@
 <div class="container">
-  <h1>BURGERS, BURGERS, YUM YUM YUM!</h1>
+  <div class="row justify-content-center">
+      {{!-- <div class="col-12"> --}}
+    <h1>BURGERS, BURGERS, YUM YUM YUM!</h1>
+  {{!-- </div> --}}
+</div>
 
   <div class="row">
-
-    <div class="col col-md-6">
+    <div class="col-md-6 col-lg-8">
       <h2>available burgers</h2>
       <ul>
         {{#each burger}}
@@ -14,28 +17,28 @@
       </ul>
     </div>
 
-    <div class="col col-md-6"></div>
-    <h2>already eaten burgers</h2>
-    <ul>
-      {{#each burger}}
-      {{#if devoured}}
-      <p>{{burger_name}}</p>
-      {{/if}}
-      {{/each}}
-    </ul>
+    <div class="col-md-6 col-lg-4">
+      <h2>already eaten burgers</h2>
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <p>{{burger_name}}</p>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 
-</div>
 
-<div class="row">
-  <div class="col-12">
-    <form class="add-burger">
-      <p>Enter name of burger to be added or devoured</p>
-      <input type="text" name="input">
-      <button type="submit" value="1">Add burger</button>
-      <button type="submit" value="0">devoure burger</button>
-    </form>
+  <div class="row">
+    <div class="col-12">
+      <form class="add-burger">
+        <p>Enter name of burger to be added or devoured</p>
+        <input type="text" name="input" id="burger-name">
+        <button type="submit" value="1">Add burger</button>
+        {{!-- <button type="submit" value="0">devoure burger</button> --}}
+      </form>
+    </div>
+
   </div>
-
-</div>
 </div>
