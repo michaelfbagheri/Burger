@@ -20,6 +20,16 @@ addNewBurger: function (value,cb) {
         throw err;
         // console.log(err)
     });
+},
+eatExistingBurger: function (value,cb) {
+    console.log('inside the eatExistingBurger  or the burger.js method')
+    orm.eatBurger(value).then((result) =>{
+        var data = result;
+        console.log('eatBurger primse successfuly returned ' + data)
+        cb(result);
+    }).catch((err) => {
+        throw err;
+    });
 }
 
 

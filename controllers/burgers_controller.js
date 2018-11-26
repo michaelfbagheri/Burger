@@ -18,12 +18,18 @@ router.post('/add/burger', function(req,res) {
     var burgerToBeAdded = req.body.burger;
     burger.addNewBurger([burgerToBeAdded],(result) => {
       console.log('after the adding of burger, weve returned with below object')
-      for (var i in result){
-          console.log(result[i]);
-      }
     res.render('index');
     });
 });
+
+router.put('/eat/burger', function(req,res){
+    console.log('router.put says you chose to eat ' + req.body.burger)
+    var burgerToBeEaten = req.body.burger;
+    burger.eatExistingBurger([burgerToBeEaten],(result) => {
+        console.log('weve returned to the router.put call back from eating the burger')
+        res.render('index');
+    })
+})
 
 
 

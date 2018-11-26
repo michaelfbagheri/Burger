@@ -23,6 +23,23 @@ var orm = {
             });
         });
 
+    },
+    eatBurger: function(value){
+        var BurgerToEat = value.toString();
+        console.log('inside orm.eatBurger method so you could eat ' + BurgerToEat)
+        return new Promise ((resolve,reject) => {
+            var queryString = 'UPDATE burger SET devoured = 1 WHERE burger_name =';
+            queryString+='"';
+            queryString+=BurgerToEat;
+            queryString+='"';
+
+            console.log(queryString)
+            connection.query(queryString,function(err,result){
+                if (err) reject(err);
+                console.log(result)
+                resolve (result);
+            });
+        });
     }
 };
 
