@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row justify-content-center">
       {{!-- <div class="col-12"> --}}
-    <h1>BURGERS, BURGERS, YUM YUM YUM!</h1>
+    <h1 class="title">BURGERS, BURGERS, YUM YUM YUM!</h1>
   {{!-- </div> --}}
 </div>
 
   <div class="row">
     <div class="col-md-6 col-lg-8">
       <h2>available burgers</h2>
-      <ul>
+      <ul class="block-1">
         {{#each burger}}
         {{#unless devoured}}
         <p>{{burger_name}}</p>
@@ -18,8 +18,8 @@
     </div>
 
     <div class="col-md-6 col-lg-4">
-      <h2>already eaten burgers</h2>
-      <ul>
+      <h2>Eaten burgers</h2>
+      <ul class="block-1">
         {{#each burger}}
         {{#if devoured}}
         <p>{{burger_name}}</p>
@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-12">
       <form class="burger">
-        <p>Enter name of burger to be added or devoured</p>
+
         <input type="text" name="input" id="burger-name">
         <button type="submit" value="add">Add burger</button>
         <button type="submit" value="eat">devoure burger</button>

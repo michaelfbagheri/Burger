@@ -18,7 +18,6 @@ addNewBurger: function (value,cb) {
         cb(result);
     }).catch((err) => {
         throw err;
-        // console.log(err)
     });
 },
 eatExistingBurger: function (value,cb) {
